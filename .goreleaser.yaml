@@ -14,7 +14,7 @@ builds:
     ignore:
       - goos: windows
         goarch: arm64
-    binary: kubectl-alfred
+    binary: kube-alfred
     ldflags:
       - -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}}
 archives:
@@ -40,6 +40,6 @@ changelog:
       - '^test:'
 release:
   github:
-    owner: yourusername
-    name: kubectl-alfred
+    owner: kemalcanbora
+    name: kube-alfred
   prerelease: auto
