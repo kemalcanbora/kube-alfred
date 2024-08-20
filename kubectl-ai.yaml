@@ -9,15 +9,45 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/yourusername/kubectl-alfred/releases/download/v0.1.0/kubectl-alfred_v0.1.0_linux_amd64.tar.gz
-      sha256: "" # You'll need to fill this in after building your binary
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Linux_x86_64.tar.gz
+      sha256: df83c36e773ee3ed710565864de4347948675fbc3301eafb403491765fbe0174
       files:
-        - from: "./kubectl-alfred"
+        - from: "kube-alfred"
           to: "."
-      bin: "kubectl-alfred"
+      bin: "kube-alfred"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Linux_arm64.tar.gz
+      sha256: 2912f08fa73d6ccb0bcb4ced31e42eec8edeee23ba7e5f41eeac067055d7088b
+      files:
+        - from: "kube-alfred"
+          to: "."
+      bin: "kube-alfred"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Darwin_x86_64.tar.gz
+      sha256: 849ddbff50f71aaf6cd0c4303893768a6e9b890d7652a5fcaaa367b20c086f12
+      files:
+        - from: "kube-alfred"
+          to: "."
+      bin: "kube-alfred"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Darwin_arm64.tar.gz
+      sha256: 4a5eeb81c9f6dad89d8dc1b49be4d58fe7b922408123aa0f270d21bf1d79bef8
+      files:
+        - from: "kube-alfred"
+          to: "."
+      bin: "kube-alfred"
   shortDescription: AI-powered Kubernetes assistant
   description: |
     Alfred is an AI-powered assistant for Kubernetes. It allows you to ask
     questions about Kubernetes directly from kubectl, providing intelligent
     responses using the Anthropic API.
-  homepage: https://github.com/yourusername/kubectl-alfred
+  homepage: https://github.com/kemalcanbora/kube-alfred
