@@ -9,6 +9,12 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/tmc/langchaingo/llms"
 	"github.com/tmc/langchaingo/llms/anthropic"
+	"github.com/zalando/go-keyring"
+)
+
+const (
+	serviceName = "ANTHROPIC_API_KEY"
+	userName    = "system"
 )
 
 func main() {
@@ -20,28 +26,69 @@ func main() {
 
 func NewRootCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "alfred <question>",
+		Use:   "alfred",
 		Short: "AI-powered Kubernetes assistant",
-		Long:  `Alfred is an AI-powered assistant for Kubernetes, allowing you to ask questions using natural language.`,
-		RunE:  runAIQuery,
+		Long: `Alfred is an AI-powered assistant for Kubernetes, allowing you to ask questions using natural language.
+
+Commands:
+  ask      Ask a question about Kubernetes
+  set-key  Set the Anthropic API key in the system keyring
+  del-key  Delete the Anthropic API key from the system keyring`,
 	}
+
+	cmd.AddCommand(NewAskCmd())
+	cmd.AddCommand(NewSetKeyCmd())
+	cmd.AddCommand(NewDelKeyCmd())
 
 	return cmd
 }
 
+func NewAskCmd() *cobra.Command {
+	return &cobra.Command{
+		Use:   "ask <question>",
+		Short: "Ask a question about Kubernetes",
+		Args:  cobra.MinimumNArgs(1),
+		RunE:  runAIQuery,
+	}
+}
+
+func NewSetKeyCmd() *cobra.Command {
+	return &cobra.Command{
+		Use:   "set-key <api-key>",
+		Short: "Set the Anthropic API key in the system keyring",
+		Args:  cobra.ExactArgs(1),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return keyring.Set(serviceName, userName, args[0])
+		},
+	}
+}
+
+func NewDelKeyCmd() *cobra.Command {
+	return &cobra.Command{
+		Use:   "del-key",
+		Short: "Delete the Anthropic API key from the system keyring",
+		Args:  cobra.NoArgs,
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return keyring.Delete(serviceName, userName)
+		},
+	}
+}
+
 func runAIQuery(cmd *cobra.Command, args []string) error {
-	if len(args) == 0 {
-		return fmt.Errorf("please provide a question about Kubernetes")
+	question := strings.Join(args, " ")
+
+	apiKey, err := keyring.Get(serviceName, userName)
+	if err != nil {
+		return fmt.Errorf("failed to get API key from keyring: %w", err)
 	}
 
-	question := strings.Join(args, " ")
-	err := os.Setenv("ANTHROPIC_API_KEY", "ANTHROPIC_API_KEY")
+	err = os.Setenv("ANTHROPIC_API_KEY", apiKey)
 	if err != nil {
-		return fmt.Errorf("failed to set API key: %w", err)
+		return fmt.Errorf("failed to set API key environment variable: %w", err)
 	}
 
 	llm, err := anthropic.New(
-		anthropic.WithModel("claude-3-5-sonnet-20240620"),
+		anthropic.WithModel("claude-3-sonnet-20240320"),
 	)
 	if err != nil {
 		return fmt.Errorf("failed to create Anthropic client: %w", err)
