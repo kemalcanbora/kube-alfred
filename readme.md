@@ -57,14 +57,6 @@ kubectl alfred del-key
 
 Kube-Alfred now uses the system keyring to securely store your Anthropic API key. You only need to set it once using the `set-key` command as shown above.
 
-If you prefer to use an environment variable instead, you can still do so:
-
-```bash
-export ANTHROPIC_API_KEY=your_api_key_here
-```
-
-For persistent configuration using the environment variable, add this line to your shell's configuration file (e.g., `~/.bashrc` or `~/.zshrc`).
-
 ## Examples
 
 Here are a few example questions you can ask:
