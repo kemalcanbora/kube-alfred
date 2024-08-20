@@ -1,0 +1,23 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: alfred
+spec:
+  version: "v0.1.0"
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/yourusername/kubectl-alfred/releases/download/v0.1.0/kubectl-alfred_v0.1.0_linux_amd64.tar.gz
+      sha256: "" # You'll need to fill this in after building your binary
+      files:
+        - from: "./kubectl-alfred"
+          to: "."
+      bin: "kubectl-alfred"
+  shortDescription: AI-powered Kubernetes assistant
+  description: |
+    Alfred is an AI-powered assistant for Kubernetes. It allows you to ask
+    questions about Kubernetes directly from kubectl, providing intelligent
+    responses using the Anthropic API.
+  homepage: https://github.com/yourusername/kubectl-alfred
