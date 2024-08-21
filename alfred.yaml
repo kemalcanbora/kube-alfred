@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: alfred
 spec:
-  version: "v0.1.2"
+  version: "v0.1.0"
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.2/kube-alfred_Linux_x86_64.tar.gz
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Linux_x86_64.tar.gz
       sha256: 337bfef8ed097a7c56cbd42492dce23b14c9298e67bf86ad115558963f32d433
       files:
         - from: "kube-alfred"
@@ -19,7 +19,7 @@ spec:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.2/kube-alfred_Linux_arm64.tar.gz
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Linux_arm64.tar.gz
       sha256: 721d555e595d132380d30440b7739ac93d81b0538923a836402105f40a008e4b
       files:
         - from: "kube-alfred"
@@ -29,7 +29,7 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.2/kube-alfred_Darwin_x86_64.tar.gz
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Darwin_x86_64.tar.gz
       sha256: 0d56e7bd1afe503bc0b8e6e626fe7d8cda79c441992445f377b72e55aa2b53f0
       files:
         - from: "kube-alfred"
@@ -39,7 +39,7 @@ spec:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.2/kube-alfred_Darwin_arm64.tar.gz
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Darwin_arm64.tar.gz
       sha256: 8ec5850c00af2d1cd61da86fa1320845d8a70569e543df29a44b207d146171b9
       files:
         - from: "kube-alfred"
