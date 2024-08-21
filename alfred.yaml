@@ -12,7 +12,9 @@ spec:
       uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Linux_x86_64.tar.gz
       sha256: 8dcb8eda64534b6b4d8cbb14e1b333e4e9a7eb61288264ead8f8d8c850d4463b
       files:
-        - from: LICENSE
+        - from: "kube-alfred"
+          to: "."
+        - from: "LICENSE"
           to: "."
       bin: "kube-alfred"
     - selector:
@@ -22,7 +24,9 @@ spec:
       uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Linux_arm64.tar.gz
       sha256: 0f61ef40be6479fe89745f85af66c781005c092f9dc0f2ed9a6842a912996bac
       files:
-        - from: LICENSE
+        - from: "kube-alfred"
+          to: "."
+        - from: "LICENSE"
           to: "."
       bin: "kube-alfred"
     - selector:
@@ -32,7 +36,9 @@ spec:
       uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Darwin_x86_64.tar.gz
       sha256: f04f9fb09e149012a5f844fc054f5ae7ee66093bb890f1b3916f90e44ed4b4fd
       files:
-        - from: LICENSE
+        - from: "kube-alfred"
+          to: "."
+        - from: "LICENSE"
           to: "."
       bin: "kube-alfred"
     - selector:
@@ -42,7 +48,9 @@ spec:
       uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Darwin_arm64.tar.gz
       sha256: 7724cdc8cc1aed237d037be1b4cc9bf858f8df913df5601fc2fdcd832cbe25e4
       files:
-        - from: LICENSE
+        - from: "kube-alfred"
+          to: "."
+        - from: "LICENSE"
           to: "."
       bin: "kube-alfred"
     - selector:
@@ -53,6 +61,8 @@ spec:
       sha256: 33186710597e53b53742d9f296b49d0d211b94b4eab2dd047b9360d26793bba5
       files:
         - from: "kube-alfred.exe"
+          to: "."
+        - from: "LICENSE"
           to: "."
       bin: "kube-alfred.exe"
   shortDescription: AI-powered Kubernetes assistant
