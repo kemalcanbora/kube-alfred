@@ -10,7 +10,7 @@ spec:
           os: linux
           arch: amd64
       uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.2/kube-alfred_Linux_x86_64.tar.gz
-      sha256: 4e45f99915a5f4cebb60ccc74a53d04661855f8ee80909658a75e2c4fe09e93f
+      sha256: 337bfef8ed097a7c56cbd42492dce23b14c9298e67bf86ad115558963f32d433
       files:
         - from: "kube-alfred"
           to: "."
@@ -20,7 +20,7 @@ spec:
           os: linux
           arch: arm64
       uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.2/kube-alfred_Linux_arm64.tar.gz
-      sha256: 7d29d151ed9d5145572d2bfb674913cd743349bd9f566f33b27bc4ce6e61c9d1
+      sha256: 721d555e595d132380d30440b7739ac93d81b0538923a836402105f40a008e4b
       files:
         - from: "kube-alfred"
           to: "."
@@ -30,7 +30,7 @@ spec:
           os: darwin
           arch: amd64
       uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.2/kube-alfred_Darwin_x86_64.tar.gz
-      sha256: af61b9fd74ceb6b53f5d005e8a889c9944d37e12c06d89d6fe8867e559f5f80a
+      sha256: 0d56e7bd1afe503bc0b8e6e626fe7d8cda79c441992445f377b72e55aa2b53f0
       files:
         - from: "kube-alfred"
           to: "."
@@ -40,7 +40,7 @@ spec:
           os: darwin
           arch: arm64
       uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.2/kube-alfred_Darwin_arm64.tar.gz
-      sha256: da01b3aabdfbe69d59fd43cc48d59d47f74c53c8bc8680ad0c755a68a21f242b
+      sha256: 8ec5850c00af2d1cd61da86fa1320845d8a70569e543df29a44b207d146171b9
       files:
         - from: "kube-alfred"
           to: "."
