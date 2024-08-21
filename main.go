@@ -88,7 +88,7 @@ func runAIQuery(cmd *cobra.Command, args []string) error {
 	}
 
 	llm, err := anthropic.New(
-		anthropic.WithModel("claude-3-sonnet-20240320"),
+		anthropic.WithModel("claude-3-5-sonnet-20240620"),
 	)
 	if err != nil {
 		return fmt.Errorf("failed to create Anthropic client: %w", err)
