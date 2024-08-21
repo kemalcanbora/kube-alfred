@@ -21,6 +21,14 @@ If you prefer to install manually:
 3. Make it executable: `chmod +x kubectl-alfred`
 4. Move it to a directory in your PATH, e.g., `mv kubectl-alfred /usr/local/bin/`
 
+### Testing plugin installation locally
+
+ `kubectl krew install --manifest=alfred.yaml --archive=foo.tar.gz`
+
+### Generate sha256
+
+ `shasum -a 256 releases/download/<VERSION>/*.tar.gz`
+
 ## Usage
 
 Once installed, you can use kube-alfred with the following commands:
@@ -82,3 +90,7 @@ If you encounter any issues or have questions, please file an issue on the [GitH
 ## Security Note
 
 Kube-Alfred uses your system's keyring to store the Anthropic API key securely. This is generally more secure than storing it in plain text or environment variables. However, the security of the keyring depends on your operating system and its configuration. Always ensure you're following best practices for system security.
+
+
+## Output
+[![Ekran-Resmi-2024-08-21-10-30-51.png](https://i.postimg.cc/jq4qx0qp/Ekran-Resmi-2024-08-21-10-30-51.png)](https://postimg.cc/F11Xp6Lp)
